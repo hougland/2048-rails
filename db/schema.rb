@@ -11,6 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160208233921) do
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username"
+    t.string   "uid"
+    t.string   "provider",   default: "github"
+    t.integer  "best_score", default: 0
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
 
 end

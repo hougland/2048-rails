@@ -3,8 +3,8 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :username
       t.string :uid
-      t.string :provider
-      t.integer :best_score
+      t.string :provider, :default => "github"
+      t.integer :best_score, :default => 0
 
       t.timestamps null: false
     end
