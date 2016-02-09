@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def load_game
     game = Game.find_by(id: params[:id])

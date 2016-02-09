@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   # api endpoints
   get 'games/:id' => 'games#load_game', as: :load_game
-  post 'games/:id' => 'games#save_game', as: :save_game
+  post 'games' => 'games#save_game', as: :save_game
 
   resources :users, :except => [:new, :create, :edit, :update]
 
