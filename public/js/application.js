@@ -1,6 +1,7 @@
 // Wait till the browser is ready to render the game (avoids glitches)
 window.requestAnimationFrame(function () {
   var currentGame = new GameManager(4, KeyboardInputManager, HTMLActuator, LocalStorageManager);
+
   $('#save_game').click(function() {
     var postUrl = "http://localhost:3000/games";
     var gameData = currentGame.storageManager.storage.gameState;
@@ -16,4 +17,13 @@ window.requestAnimationFrame(function () {
         console.log("failure");
       });
   });
+
+  $('#load-game').click(function() {
+    var getUrl = "http://localhost:3000/games/4";
+    $.ajax(getUrl)
+      .done(function(data) {
+        currentGame.loadGame(data);
+    });
+  });
+
 });

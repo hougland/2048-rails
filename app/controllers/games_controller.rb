@@ -3,7 +3,8 @@ class GamesController < ApplicationController
   before_action :current_user
 
   def load_game
-    game = Game.find_by(id: params[:id])
+    game = Game.find(params[:id])
+
     if game
       render :json => game.as_json(except: [:created_at, :updated_at]), :status => :ok
     else
