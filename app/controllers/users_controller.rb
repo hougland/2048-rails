@@ -20,4 +20,7 @@ class UsersController < ApplicationController
   def destroy
 
   end
+
+  def leaderboard
+  end
 end
