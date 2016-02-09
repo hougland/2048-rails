@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :current_user
+  before_action :require_login
 
   def index
     # leaderboard
@@ -14,14 +15,6 @@ class UsersController < ApplicationController
   def show
     # home page with saved games, etc.
     # @games = @current_user.games
-  end
-
-  def edit
-
-  end
-
-  def update
-
   end
 
   def destroy
