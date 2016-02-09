@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
   skip_before_action :verify_authenticity_token
+  before_action :current_user
 
   def load_game
     game = Game.find_by(id: params[:id])
@@ -19,7 +20,8 @@ class GamesController < ApplicationController
     game.over = params["over"]
     game.won = params["won"]
     game.keep_playing = params["keepPlaying"]
-    binding.pry
+    game.user_id = @current_user.id
+
     if game.save
       render :json => [], :status => :ok
     else
