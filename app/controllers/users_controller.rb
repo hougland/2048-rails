@@ -21,6 +21,4 @@ class UsersController < ApplicationController
 
   end
 
-  def leaderboard
-  end
 end

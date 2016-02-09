@@ -10,6 +10,7 @@ class GamesController < ApplicationController
   end
 
   def save_game
+    
   end
 
 end
