@@ -19,7 +19,7 @@ class GamesController < ApplicationController
     game.over = params["over"]
     game.won = params["won"]
     game.keep_playing = params["keepPlaying"]
-
+    binding.pry
     if game.save
       render :json => [], :status => :ok
     else
