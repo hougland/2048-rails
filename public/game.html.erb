@@ -31,11 +31,6 @@
     <div class="above-game">
       <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
       <a class="restart-button">New Game</a>
-      <% if !@current_user %>
-        <a href="/auth/github/" class="restart-button log-in">Log In</a>
-      <% else %>
-        <a href="/logout" class="restart-button log-out" data-method="delete">Log Out</a>
-      <% end %>
     </div>
 
     <div class="game-container">
