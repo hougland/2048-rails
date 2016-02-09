@@ -1,1 +1,9 @@
 <h1>User Homepage</h1>
+
+<ul>
+<% @games.each do |game| %>
+  <li>Last Played: <%= game.updated_at.to_date %>, score: <%= game.score %>
+    <%= button_to 'Delete', load_game_path(game.id), method: :delete %> <%= button_to 'Resume', root_path %>
+  </li>
+<% end %>
+</ul>

@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 
   resources :users, :except => [:new, :create, :edit, :update]
 
+  delete 'games/:id' => 'games#destroy'
+
 end

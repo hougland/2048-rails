@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def show
     # home page with saved games, etc.
-    # @games = @current_user.games
+    @games = @current_user.games
   end
 
   def destroy
