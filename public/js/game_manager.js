@@ -62,9 +62,6 @@ GameManager.prototype.setup = function () {
 
 GameManager.prototype.loadGame = function (gameToLoad) {
   var previousState = gameToLoad;
-  console.log(gameToLoad);
-  // console.log("new game to load:");
-  // console.log(previousState);
 
   // Reload the game from a previous game if present
   if (previousState) {
