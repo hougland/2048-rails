@@ -19,7 +19,7 @@
  h1 {
    font-size: 80px;
    font-weight: bold;
-   margin: 0;
+   margin-bottom: 30px;
    display: block;
    float: left;
  }
@@ -27,9 +27,19 @@
  html, body {
    margin: 0;
    padding: 0;
-
    background: #faf8ef;
-   color: $text-color;
+   color: #776e65;
    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
    font-size: 18px;
+ }
+
+ .navbar {
+    background: #f2b179;
+    border-width: 0px 0px 2px 0px;
+    border-color: #bbada0;
+    border-radius: 0;
+ }
+
+ .navbar a {
+   text-decoration: none;
  }
