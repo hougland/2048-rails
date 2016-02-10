@@ -14,6 +14,7 @@ window.requestAnimationFrame(function () {
     })
       .done(function() {
         console.log("success");
+        $('.save-notification').show().delay(3000).fadeOut();
       })
       .fail(function() {
         console.log("failure");
