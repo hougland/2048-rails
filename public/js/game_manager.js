@@ -34,8 +34,6 @@ GameManager.prototype.isGameTerminated = function () {
 // Set up the game
 GameManager.prototype.setup = function () {
   var previousState = this.storageManager.getGameState();
-  console.log("regular load old game:");
-  console.log(previousState);
 
   // Reload the game from a previous game if present
   if (previousState) {
@@ -60,6 +58,7 @@ GameManager.prototype.setup = function () {
   this.actuate();
 };
 
+// loads a saved game from the Rails endpoint
 GameManager.prototype.loadGame = function (gameToLoad) {
   var previousState = gameToLoad;
 

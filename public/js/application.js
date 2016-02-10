@@ -22,9 +22,7 @@ window.requestAnimationFrame(function () {
     var getUrl = "http://localhost:3000/games/1";
     $.ajax(getUrl)
       .done(function(data) {
-        console.log(data);
         currentGame.loadGame(data);
-
     });
   });
 
