@@ -20,10 +20,25 @@ window.requestAnimationFrame(function () {
 
   $('#load-game').click(function() {
     var getUrl = "http://localhost:3000/games/1";
+
     $.ajax(getUrl)
       .done(function(data) {
         currentGame.loadGame(data);
     });
   });
+
+  // $('.resume-game').click(function() {
+  //   var gameId = this.attr(data-val);
+  //   console.log(gameId);
+  //   var getUrl = "http://localhost:3000/games/" + gameId;
+  //
+  //   window.location.href = 'http://localhost:3000/';
+  //
+  //   $.ajax(getUrl)
+  //     .done(function(data) {
+  //       currentGame.loadGame(data);
+  //   });
+  //
+  // });
 
 });

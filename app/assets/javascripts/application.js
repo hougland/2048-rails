@@ -14,3 +14,21 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(document).on('ready', function() {
+  $('.resume-game').click(function() {
+    var gameId = $(this).attr("data-val");
+    var getUrl = "http://localhost:3000/games/" + gameId;
+    console.log(this);
+    console.log(gameId);
+
+    window.location.href = 'http://localhost:3000/';
+
+    // this code doesn't run when it goes to the next page, runs on current page, and currentGame is udnefined
+    $.ajax(getUrl)
+      .done(function(data) {
+        // currentGame.loadGame(data);
+    });
+
+  });
+});
