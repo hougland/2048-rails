@@ -4,16 +4,17 @@ class UsersController < ApplicationController
 
   def index
     # leaderboard
-    @leaders = {}
+    @leaders = []
 
     User.all.each do |user|
-      @leaders[user.username] = user.best_score
+      @leaders.push([user, user.best_score])
     end
-    # need to sort leaders by score
+
+    @leaders = @leaders.sort_by {|user| user[1]}.reverse
   end
 
   def show
-    # home page with saved games, etc.
+    # home page with saved games
     @games = @current_user.games
   end
 

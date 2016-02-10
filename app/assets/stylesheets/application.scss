@@ -48,6 +48,10 @@
    width: 75%;
  }
 
+ th, td {
+   text-align: center;
+ }
+
  .score-container {
    -webkit-box-sizing: content-box;
      -moz-box-sizing: content-box;

@@ -2,16 +2,16 @@
 
 <table class="table">
   <tr>
-    <th>Place</th>
-    <th>User</th>
-    <th>High Score</th>
+    <th class="col-md-1">Place</th>
+    <th class="col-md-1">User</th>
+    <th class="col-md-1">High Score</th>
   </tr>
   <% counter = 1 %>
-  <% @leaders.each do |key, value| %>
+  <% @leaders.each do |user| %>
     <tr>
-      <td><%= counter %></td>
-      <td><%= key %></td>
-      <td><%= value %></td>
+      <td class="col-md-1"><%= counter %></td>
+      <td class="col-md-1"><%= user[0].username %></td>
+      <td class="col-md-1"><%= user[1] %></td>
       <% counter += 1 %>
     </tr>
   <% end %>
