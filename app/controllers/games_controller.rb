@@ -22,6 +22,10 @@ class GamesController < ApplicationController
     game.won = params["won"]
     game.keep_playing = params["keepPlaying"]
     game.user_id = @current_user.id
+    if @current_user.best_score < params["score"].to_i
+      @current_user.best_score = params["score"].to_i
+      @current_user.save
+    end
 
     if game.save
       render :json => [], :status => :ok
