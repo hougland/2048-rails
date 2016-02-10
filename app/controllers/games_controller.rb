@@ -5,7 +5,7 @@ class GamesController < ApplicationController
   def load_game
     game = Game.find(params[:id])
 
-    if game
+    if game && game.user_id == @current_user.id
       render :json => game.as_json(except: [:created_at, :updated_at]), :status => :ok
     else
       render :json => [], :status => :no_content
