@@ -1,7 +1,17 @@
 <h1>Leaderboard</h1>
 
-<ul>
+<table class="table">
+  <tr>
+    <th>Place</th>
+    <th>User</th>
+    <th>Score</th>
+  </tr>
+  <% counter = 1 %>
   <% @leaders.each do |key, value| %>
-    <li><%= key %>: <%= value %></li>
+    <tr>
+      <td><%= counter %></td>
+      <td><%= key %></td>
+      <td><%= value %></td>
+    </tr>
   <% end %>
-</ul>
+</table>
