@@ -1,6 +1,8 @@
 // Wait till the browser is ready to render the game (avoids glitches)
 window.requestAnimationFrame(function () {
   var currentGame = new GameManager(4, KeyboardInputManager, HTMLActuator, LocalStorageManager);
+  var gameId = window.location.search.slice(5);
+  console.log(gameId);
 
   $('#save_game').click(function() {
     var postUrl = "http://localhost:3000/games";
@@ -18,27 +20,12 @@ window.requestAnimationFrame(function () {
       });
   });
 
-  $('#load-game').click(function() {
-    var getUrl = "http://localhost:3000/games/1";
-
+  if (gameId.length > 0) {
+    var getUrl = "http://localhost:3000/games/" + gameId;
     $.ajax(getUrl)
       .done(function(data) {
         currentGame.loadGame(data);
     });
-  });
-
-  // $('.resume-game').click(function() {
-  //   var gameId = this.attr(data-val);
-  //   console.log(gameId);
-  //   var getUrl = "http://localhost:3000/games/" + gameId;
-  //
-  //   window.location.href = 'http://localhost:3000/';
-  //
-  //   $.ajax(getUrl)
-  //     .done(function(data) {
-  //       currentGame.loadGame(data);
-  //   });
-  //
-  // });
+  }
 
 });

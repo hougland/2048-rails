@@ -22,7 +22,7 @@ $(document).on('ready', function() {
     console.log(this);
     console.log(gameId);
 
-    window.location.href = 'http://localhost:3000/';
+    window.location.href = 'http://localhost:3000/?gid=' + gameId;
 
     // this code doesn't run when it goes to the next page, runs on current page, and currentGame is udnefined
     $.ajax(getUrl)
