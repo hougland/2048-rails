@@ -10,6 +10,8 @@ function HTMLActuator() {
 HTMLActuator.prototype.actuate = function (grid, metadata) {
   var self = this;
   console.log("this is the HTML Actuator actuate function");
+  console.log(grid);
+  console.log(metadata);
 
   window.requestAnimationFrame(function () {
     self.clearContainer(self.tileContainer);
