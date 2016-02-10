@@ -1,11 +1,22 @@
-<h1>User Homepage</h1>
+<h1>Your Games</h1>
 
-<ul>
-<% @games.each do |game| %>
-  <li>Last Played: <%= game.updated_at.to_date %>, score: <%= game.score %>
-    <%= button_to 'Delete', load_game_path(game.id), method: :delete %>
-    <!-- <%= button_to 'Resume', root_path, data: { val: game.id }, class: "resume-game", method: :get %> -->
-    <button class="resume-game" data-val=<%= game.id %>>Resume</button>
-  </li>
-<% end %>
-</ul>
+<table class="table">
+  <tr>
+    <th class="col-xs-1">Game</th>
+    <th class="col-md-1">Last Played On</th>
+    <th class="col-md-1">Score</th>
+    <th class="col-md-1">Resume</th>
+    <th class="col-md-1">Delete</th>
+  </tr>
+  <% counter = 1 %>
+  <% @games.each do |game| %>
+    <tr>
+      <td class="col-xs-1"><%= counter %></td>
+      <td class="col-md-1"><%= game.updated_at.to_date %></td>
+      <td class="col-md-1"><%= game.score %></td>
+      <td class="col-md-1"><button class="btn btn-success resume-game" data-val=<%= game.id %>>Resume</button></td>
+      <td class="col-md-1"><%= button_to 'Delete', load_game_path(game.id), method: :delete, class: "btn btn-danger" %></td>
+    </tr>
+    <% counter += 1 %>
+  <% end %>
+</table>
