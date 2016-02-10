@@ -63,3 +63,32 @@
      -moz-box-sizing: content-box;
           box-sizing: content-box;
  }
+
+ .dropdown-toggle a {
+   background: #f2b179;
+ }
+
+ .dropdown-menu {
+   background: #f2b179;
+ }
+
+ .save-button {
+   display: inline-block;
+   background: #8f7a66;
+   border-radius: 3px;
+   margin-top: 20px;
+   padding: 0 20px;
+   text-decoration: none;
+   color: #f9f6f2;
+   height: 40px;
+   line-height: 42px;
+   display: block;
+   text-align: center;
+   float: right;
+ }
+
+ .save-notification {
+   display: none;
+   margin-top: 30px;
+   text-align: center;
+ }

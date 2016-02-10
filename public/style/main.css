@@ -514,7 +514,7 @@ hr {
   clear: both; }
 
 .game-intro {
-  float: left;
+  text-align: center;
   line-height: 42px;
   margin-bottom: 0; }
 
@@ -523,13 +523,14 @@ hr {
   background: #8f7a66;
   border-radius: 3px;
   padding: 0 20px;
+  margin-top: 20px;
   text-decoration: none;
   color: #f9f6f2;
   height: 40px;
   line-height: 42px;
   display: block;
   text-align: center;
-  float: right; }
+  float: left; }
 
 .game-explanation {
   margin-top: 50px; }
@@ -758,6 +759,4 @@ hr {
   .game-message .lower {
     margin-top: 30px !important; } }
 
-    .save-notification {
-      display: none;
-    }
+  
