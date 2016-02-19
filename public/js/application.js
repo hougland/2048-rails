@@ -2,7 +2,6 @@
 window.requestAnimationFrame(function () {
   var currentGame = new GameManager(4, KeyboardInputManager, HTMLActuator, LocalStorageManager);
   var gameId = window.location.search.slice(5);
-  console.log(gameId);
 
   $('#save_game').click(function() {
     var postUrl = "http://localhost:3000/games";
@@ -13,11 +12,9 @@ window.requestAnimationFrame(function () {
       data: JSON.parse(gameData)
     })
       .done(function() {
-        console.log("success");
         $('.save-notification').show().delay(3000).fadeOut();
       })
       .fail(function() {
-        console.log("failure");
       });
   });
 

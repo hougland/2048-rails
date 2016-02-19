@@ -18,9 +18,6 @@
 $(document).on('ready', function() {
   $('.resume-game').click(function() {
     var gameId = $(this).attr("data-val");
-    var getUrl = "http://localhost:3000/games/" + gameId;
-    console.log(this);
-    console.log(gameId);
 
     window.location.href = 'http://localhost:3000/?gid=' + gameId;
 
