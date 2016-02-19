@@ -24,11 +24,5 @@ $(document).on('ready', function() {
 
     window.location.href = 'http://localhost:3000/?gid=' + gameId;
 
-    // this code doesn't run when it goes to the next page, runs on current page, and currentGame is udnefined
-    $.ajax(getUrl)
-      .done(function(data) {
-        // currentGame.loadGame(data);
-    });
-
   });
 });
